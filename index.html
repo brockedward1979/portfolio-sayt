@@ -117,7 +117,7 @@
                     </h1>
 
                     <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        <strong class="text-slate-200">ASP.NET Core Web API / MVC</strong> va <strong class="text-slate-200">React.js</strong> ekotizimida yuqori unumdorlikka ega veb-ilovalar, murakkab <strong class="text-slate-200">SQL</strong> ma'lumotlar bazalari hamda <strong class="text-slate-200">Windows Forms</strong> korporativ desktop dasturlarini noldan arxitektura darajasigacha ishlab chiqaman.
+                        <strong class="text-slate-200">ASP.NET Core Web API / MVC</strong>, <strong class="text-slate-200">Blazor</strong> va <strong class="text-slate-200">React.js</strong> ekotizimida yuqori unumdorlikka ega veb-ilovalar, <strong class="text-slate-200">Figma</strong> UI/UX dizayn tizimlari, murakkab <strong class="text-slate-200">SQL</strong> ma'lumotlar bazalari hamda <strong class="text-slate-200">C++ / Windows Forms</strong> desktop dasturlarini noldan arxitektura darajasigacha ishlab chiqaman.
                     </p>
 
                     <!-- Tezkor harakat tugmalari -->
@@ -136,8 +136,11 @@
                     <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
                         <span class="text-xs font-mono text-slate-500 mr-1">Asosiy stek:</span>
                         <span class="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-xs">.NET / C#</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-mono text-xs">Blazor</span>
                         <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-mono text-xs">React.js</span>
                         <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-300 font-mono text-xs">ASP.NET Core</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 font-mono text-xs">C++</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-pink-500/10 border border-pink-500/30 text-pink-300 font-mono text-xs">Figma</span>
                         <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-xs">SQL Server</span>
                         <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 font-mono text-xs">WinForms</span>
                     </div>
@@ -165,19 +168,21 @@
 
 <span class="text-purple-400">public class</span> <span class="text-emerald-400">FullstackEngineer</span>
 {
-    <span class="text-purple-400">public string</span> Role => <span class="text-amber-300">"Fullstack .NET &amp; React Dev"</span>;
+    <span class="text-purple-400">public string</span> Role => <span class="text-amber-300">"Fullstack .NET, Blazor &amp; React Dev"</span>;
     
-    <span class="text-purple-400">public string</span>[] Frontend => [
-        <span class="text-amber-300">"HTML5"</span>, <span class="text-amber-300">"CSS3"</span>, <span class="text-amber-300">"JavaScript"</span>, <span class="text-amber-300">"React.js"</span>
+    <span class="text-purple-400">public string</span>[] FrontendAndDesign => [
+        <span class="text-amber-300">"HTML5"</span>, <span class="text-amber-300">"CSS3"</span>, <span class="text-amber-300">"JavaScript"</span>,
+        <span class="text-amber-300">"React.js"</span>, <span class="text-amber-300">"Blazor"</span>, <span class="text-amber-300">"Figma (UI/UX)"</span>
     ];
 
     <span class="text-purple-400">public string</span>[] Backend => [
-        <span class="text-amber-300">".NET 8"</span>, <span class="text-amber-300">"ASP.NET Core Web API"</span>,
+        <span class="text-amber-300">".NET 8 (C#)"</span>, <span class="text-amber-300">"ASP.NET Core Web API"</span>,
         <span class="text-amber-300">"ASP.NET Core MVC"</span>
     ];
 
-    <span class="text-purple-400">public string</span>[] DataAndDesktop => [
-        <span class="text-amber-300">"SQL (T-SQL)"</span>, <span class="text-amber-300">"Windows Forms App"</span>
+    <span class="text-purple-400">public string</span>[] SystemsAndData => [
+        <span class="text-amber-300">"C++"</span>, <span class="text-amber-300">"Windows Forms App"</span>,
+        <span class="text-amber-300">"SQL (T-SQL)"</span>
     ];
 
     <span class="text-purple-400">public bool</span> IsReadyToBuild() => <span class="text-cyan-400">true</span>;
@@ -211,16 +216,16 @@
             <!-- Kategoriya Filter Tugmalari -->
             <div class="flex flex-wrap justify-center gap-2.5 mb-12">
                 <button onclick="filterSkills('all')" id="skill-tab-all" class="skill-tab px-5 py-2.5 rounded-xl text-sm font-semibold bg-cyan-500 text-obsidian-950 shadow-lg shadow-cyan-500/20 transition-all">
-                    Barchasi (9)
+                    Barchasi (12)
                 </button>
                 <button onclick="filterSkills('frontend')" id="skill-tab-frontend" class="skill-tab px-5 py-2.5 rounded-xl text-sm font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-slate-700 transition-all">
-                    Frontend
+                    Frontend &amp; Dizayn
                 </button>
                 <button onclick="filterSkills('backend')" id="skill-tab-backend" class="skill-tab px-5 py-2.5 rounded-xl text-sm font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-slate-700 transition-all">
                     Backend &amp; .NET
                 </button>
                 <button onclick="filterSkills('db_desktop')" id="skill-tab-db_desktop" class="skill-tab px-5 py-2.5 rounded-xl text-sm font-semibold bg-obsidian-800 text-slate-300 hover:text-white border border-slate-700 transition-all">
-                    Ma'lumotlar bazasi &amp; Desktop
+                    Desktop, Tizim &amp; DB
                 </button>
             </div>
 
@@ -286,15 +291,15 @@
                     </div>
                     <div class="space-y-2 pt-4 border-t border-slate-800 font-mono text-xs">
                         <div class="flex items-center justify-between text-slate-300">
-                            <span>• React.js (Hooks, State)</span>
+                            <span>• React.js &amp; Blazor (WASM/Server)</span>
                             <span class="text-cyan-400">Web SPA</span>
                         </div>
                         <div class="flex items-center justify-between text-slate-300">
-                            <span>• HTML5, CSS3, Modern JS</span>
-                            <span class="text-cyan-400">Responsive</span>
+                            <span>• Figma UI/UX, HTML5, CSS3, JS</span>
+                            <span class="text-cyan-400">Design &amp; UI</span>
                         </div>
                         <div class="flex items-center justify-between text-slate-300">
-                            <span>• Windows Forms (C#)</span>
+                            <span>• Windows Forms (C#) &amp; C++</span>
                             <span class="text-amber-400">Desktop UI</span>
                         </div>
                     </div>
@@ -435,9 +440,10 @@
                             <div>
                                 <label class="block text-xs font-mono text-slate-400 mb-2">Loyiha turi *</label>
                                 <select required class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-slate-700 text-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none text-sm transition-all">
-                                    <option value="Fullstack tizim (.NET + React)">Fullstack tizim (ASP.NET Core + React.js)</option>
+                                    <option value="Fullstack tizim (.NET + React / Blazor)">Fullstack tizim (ASP.NET Core + React.js / Blazor)</option>
                                     <option value="Web ilova (ASP.NET Core MVC)">Veb-sayt / Portal (ASP.NET Core MVC)</option>
-                                    <option value="Desktop WinForms dastur">Desktop dastur (Windows Forms + SQL)</option>
+                                    <option value="Desktop & Tizim dasturi (WinForms / C++)">Desktop &amp; Tizim dasturi (Windows Forms / C++ / SQL)</option>
+                                    <option value="UI/UX Dizayn & Frontend (Figma + React)">UI/UX Dizayn &amp; Frontend (Figma + React / HTML/CSS)</option>
                                     <option value="Backend API">Backend REST API (.NET Web API)</option>
                                     <option value="Ish taklifi / Hamkorlik">Ish taklifi / Doimiy hamkorlik</option>
                                 </select>
@@ -527,18 +533,18 @@
                 <div>
                     <h4 class="font-mono text-xs uppercase text-slate-400 mb-1.5">Qisqacha xulosa</h4>
                     <p class="leading-relaxed">
-                        Zamonaviy veb va desktop ilovalarni loyihalash hamda ishlab chiqish bo'yicha tajribali Fullstack dasturchi. Backend qismida C#, .NET, ASP.NET Core Web API va MVC, Frontend qismida React.js, HTML5, CSS3, JavaScript, ma'lumotlar bazasi uchun SQL hamda korporativ desktop ilovalar uchun Windows Forms texnologiyalaridan samarali foydalanaman.
+                        Zamonaviy veb, desktop va tizimli ilovalarni loyihalash hamda ishlab chiqish bo'yicha tajribali Fullstack dasturchi. Backend qismida C#, .NET, ASP.NET Core Web API va MVC, Frontend va UI/UX qismida Blazor, React.js, Figma, HTML5, CSS3, JavaScript, ma'lumotlar bazasi uchun SQL hamda yuqori unumdorlikdagi desktop dasturlar uchun C++ va Windows Forms texnologiyalaridan samarali foydalanaman.
                     </p>
                 </div>
 
                 <div class="grid sm:grid-cols-2 gap-4">
                     <div class="p-4 rounded-2xl bg-obsidian-950 border border-slate-800">
-                        <h5 class="font-bold text-white text-xs font-mono text-cyan-400 mb-2">WEB &amp; BACKEND</h5>
-                        <p class="text-xs text-slate-400 leading-relaxed">ASP.NET Core Web API, ASP.NET Core MVC, Entity Framework Core, REST API, JWT Auth, React.js, JavaScript (ES6+), HTML5, CSS3.</p>
+                        <h5 class="font-bold text-white text-xs font-mono text-cyan-400 mb-2">WEB, BACKEND &amp; UI/UX</h5>
+                        <p class="text-xs text-slate-400 leading-relaxed">ASP.NET Core Web API, ASP.NET Core MVC, Blazor (Server &amp; WASM), Entity Framework Core, React.js, Figma (UI/UX Prototyping), JavaScript (ES6+), HTML5, CSS3.</p>
                     </div>
                     <div class="p-4 rounded-2xl bg-obsidian-950 border border-slate-800">
-                        <h5 class="font-bold text-white text-xs font-mono text-emerald-400 mb-2">DATABASE &amp; DESKTOP</h5>
-                        <p class="text-xs text-slate-400 leading-relaxed">MS SQL Server, T-SQL, Stored Procedures, Relational DB Design, Windows Forms Application (WinForms), ADO.NET.</p>
+                        <h5 class="font-bold text-white text-xs font-mono text-emerald-400 mb-2">SYSTEMS, DATABASE &amp; DESKTOP</h5>
+                        <p class="text-xs text-slate-400 leading-relaxed">C++ (OOP, STL, Algorithms), Windows Forms Application (WinForms), MS SQL Server, T-SQL, Stored Procedures, Relational DB Design, ADO.NET.</p>
                     </div>
                 </div>
             </div>
@@ -575,37 +581,12 @@
         // 2. Dinamik Yozuv (Typing Effect)
         const roles = [
             "Fullstack Dasturchi",
-            ".NET Backend Muhandisi",
-            "React.js Frontend Dasturchi",
-            "WinForms & SQL Mutaxassisi"
+            ".NET & Blazor Muhandisi",
+            "React.js & Figma UI/UX Dev",
+            "C++, WinForms & SQL Mutaxassisi"
         ];
         let roleIdx = 0, charIdx = 0, isDeleting = false;
-        const typingEl = document.getElementById('typing-role');
-
-        function typeEffect() {
-            const current = roles[roleIdx];
-            if (isDeleting) {
-                typingEl.textContent = current.substring(0, charIdx - 1);
-                charIdx--;
-            } else {
-                typingEl.textContent = current.substring(0, charIdx + 1);
-                charIdx++;
-            }
-
-            let speed = isDeleting ? 45 : 90;
-            if (!isDeleting && charIdx === current.length) {
-                speed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIdx === 0) {
-                isDeleting = false;
-                roleIdx = (roleIdx + 1) % roles.length;
-                speed = 400;
-            }
-            setTimeout(typeEffect, speed);
-        }
-        typeEffect();
-
-        // 3. Ko'nikmalar Ma'lumotlari (9 ta aniq texnologiya)
+        // 3. Ko'nikmalar Ma'lumotlari (12 ta aniq texnologiya)
         const skillsData = [
             {
                 name: "HTML5",
@@ -644,6 +625,24 @@
                 tags: ["React Hooks", "SPA Architecture", "State Management"]
             },
             {
+                name: "Blazor",
+                category: "frontend",
+                level: 87,
+                color: "indigo",
+                icon: "flame",
+                desc: "C# va .NET ekotizimida interaktiv WebAssembly hamda Blazor Server veb-ilovalarini yaratish.",
+                tags: ["Blazor WebAssembly", "Blazor Server", "Razor Components"]
+            },
+            {
+                name: "Figma",
+                category: "frontend",
+                level: 86,
+                color: "pink",
+                icon: "figma",
+                desc: "Zamonaviy UI/UX interfeyslar, interaktiv prototiplar, Design System va komponentlar kutubxonasi.",
+                tags: ["UI/UX Design", "Prototyping", "Design Systems"]
+            },
+            {
                 name: ".NET (C#)",
                 category: "backend",
                 level: 92,
@@ -671,13 +670,13 @@
                 tags: ["MVC Pattern", "Razor Pages", "Middleware"]
             },
             {
-                name: "SQL (MS SQL Server)",
+                name: "C++",
                 category: "db_desktop",
-                level: 91,
-                color: "emerald",
-                icon: "database",
-                desc: "Relyatsion bazalarni loyihalash, murakkab T-SQL so'rovlar, Stored Procedures va optimizatsiya.",
-                tags: ["T-SQL", "Stored Procedures", "Query Optimization"]
+                level: 85,
+                color: "rose",
+                icon: "terminal-square",
+                desc: "Yuqori unumdorlikka ega algoritmlar, xotira boshqaruvi (Memory Management), STL va tizimli dasturlash.",
+                tags: ["C++17/20", "STL & Algorithms", "System Programming"]
             },
             {
                 name: "Windows Forms Application",
@@ -687,6 +686,15 @@
                 icon: "app-window",
                 desc: "Savdo, ombor va korxonalar uchun tezkor desktop dasturlar, printer va skaner integratsiyasi.",
                 tags: ["Desktop ERP", "ADO.NET", "POS Tizimlar"]
+            },
+            {
+                name: "SQL (MS SQL Server)",
+                category: "db_desktop",
+                level: 91,
+                color: "emerald",
+                icon: "database",
+                desc: "Relyatsion bazalarni loyihalash, murakkab T-SQL so'rovlar, Stored Procedures va optimizatsiya.",
+                tags: ["T-SQL", "Stored Procedures", "Query Optimization"]
             }
         ];
 
@@ -740,62 +748,62 @@
             {
                 id: 1,
                 category: "fullstack",
-                badge: "Fullstack • .NET Web API + React.js",
+                badge: "Fullstack • .NET Web API + React.js + Figma",
                 title: "Enterprise ERP va Ombor Boshqaruvi",
-                shortDesc: "Katta savdo tarmoqlari uchun mahsulotlar kirimi, chiqimi, qoldiqlar nazorati va moliyaviy hisobotlarni yurituvchi yagona veb-tizim.",
-                architecture: "Backend: ASP.NET Core 8 Web API (Clean Architecture, EF Core, JWT Auth) -> Ma'lumotlar bazasi: MS SQL Server (Stored Procedures) -> Frontend: React.js + Tailwind CSS.",
+                shortDesc: "Figma'da loyihalashtirilgan zamonaviy UI/UX asosida katta savdo tarmoqlari uchun mahsulotlar kirimi, chiqimi va moliyaviy hisobotlarni yurituvchi tizim.",
+                architecture: "UI/UX: Figma Design System -> Backend: ASP.NET Core 8 Web API (Clean Architecture, EF Core, JWT) -> Database: MS SQL Server -> Frontend: React.js.",
                 features: [
+                    "Figma'da ishlab chiqilgan qulay va intuitiv boshqaruv paneli (Design System)",
                     "Real vaqtda ombor qoldiqlarini kuzatish va minimal chegara ogohlantirishlari",
                     "Xodimlar uchun rollarga asoslangan kirish huquqlari (Admin, Omborchi, Menejer)",
-                    "Excel va PDF formatlarda avtomatik hisobotlarni shakllantirish",
-                    "Tezkor qidiruv va filtrlash imkoniyatiga ega React.js boshqaruv paneli"
+                    "Excel va PDF formatlarda avtomatik hisobotlarni shakllantirish"
                 ],
-                tags: ["ASP.NET Core Web API", "React.js", "MS SQL Server", "EF Core", "JWT"]
+                tags: ["ASP.NET Core Web API", "React.js", "Figma", "MS SQL Server", "EF Core"]
             },
             {
                 id: 2,
                 category: "desktop",
-                badge: "Desktop • Windows Forms + SQL",
-                title: "Savdo va Kassa POS Avtomatlashtirish Tizimi",
-                shortDesc: "Supermarket va do'konlar uchun shtrix-kod skaneri, chek printeri bilan integratsiyalashgan yuqori tezlikdagi Windows desktop dasturi.",
-                architecture: "Client: C# Windows Forms Application (Guna/DevExpress UI tamoyillari) -> Data Access: ADO.NET & Dapper -> Database: MS SQL Server Local/Network.",
+                badge: "Desktop & Systems • Windows Forms + C++ + SQL",
+                title: "Savdo, Kassa POS va Qurilmalar Integratsiyasi",
+                shortDesc: "Supermarket va do'konlar uchun shtrix-kod skaneri, chek printeri hamda C++ drayver kutubxonalari orqali tarozilar bilan ishlovchi tezkor Windows desktop dasturi.",
+                architecture: "UI Client: C# Windows Forms Application -> Hardware/Speed Module: C++ Native DLL -> Data Access: ADO.NET -> Database: MS SQL Server.",
                 features: [
+                    "C++ modul orqali fiskal registrator va elektron tarozilar bilan tezkor ma'lumot almashinuvi",
                     "Shtrix-kod skaneri orqali soniyaning ulushida savdoni rasmiylashtirish",
                     "Internet uzilganda ham oflayn rejimda uzluksiz ishlash qobiliyati",
-                    "Kundalik kassa tushumi, sof foyda va nasiya savdolar nazorati",
-                    "Termal chek printerlari va tarozilar bilan to'g'ridan-to'g'ri ulanish"
+                    "Kundalik kassa tushumi, sof foyda va nasiya savdolar nazorati"
                 ],
-                tags: ["Windows Forms", "C# .NET", "SQL Server", "T-SQL", "ADO.NET"]
+                tags: ["Windows Forms", "C++", "C# .NET", "SQL Server", "ADO.NET"]
             },
             {
                 id: 3,
                 category: "mvc",
-                badge: "Web Portal • ASP.NET Core MVC",
+                badge: "Web Portal • ASP.NET Core MVC + Figma",
                 title: "Korporativ Mijozlar Portali va CRM",
                 shortDesc: "Xizmat ko'rsatuvchi kompaniyalar uchun mijozlar bazasi, shartnomalar va buyurtmalar holatini boshqarish tizimi.",
-                architecture: "Monolitik MVC arxitektura: ASP.NET Core MVC, Razor Views, JavaScript (ES6+), CSS3 hamda SQL Server relyatsion bazasi.",
+                architecture: "Prototyping: Figma -> Monolitik MVC arxitektura: ASP.NET Core MVC, Razor Views, JavaScript (ES6+), CSS3 hamda SQL Server relyatsion bazasi.",
                 features: [
                     "Mijozlar bilan tuzilgan shartnomalar va to'lov grafiklarini avtomatik nazorat qilish",
                     "Shaxsiy kabinet orqali mijozlarning buyurtma holatini kuzatib borishi",
                     "Ichki xabarnomalar va vazifalarni xodimlar o'rtasida taqsimlash",
                     "To'liq moslashuvchan (Responsive) HTML5/CSS3 interfeys"
                 ],
-                tags: ["ASP.NET Core MVC", "HTML5 / CSS3", "JavaScript", "SQL", "Entity Framework"]
+                tags: ["ASP.NET Core MVC", "Figma", "HTML5 / CSS3", "JavaScript", "SQL"]
             },
             {
                 id: 4,
                 category: "fullstack",
-                badge: "Fullstack • React.js + .NET API",
-                title: "Moliyaviy Analitika va Kassa Nazorati",
-                shortDesc: "Kompaniya rahbarlari uchun barcha filiallarning daromad va xarajatlarini grafiklarda ko'rsatuvchi tahliliy veb-ilova.",
-                architecture: "RESTful API (.NET Core) murakkab SQL agregatsiya so'rovlarini qayta ishlaydi va React.js frontendiga JSON ko'rinishida uzatadi.",
+                badge: "Fullstack • Blazor + .NET API + SQL",
+                title: "Real-Vaqt Moliyaviy Analitika va Monitoring",
+                shortDesc: "To'liq C# va Blazor texnologiyasida qurilgan, kompaniya filiallarining daromad va xarajatlarini real vaqtda tahlil qiluvchi SPA veb-ilova.",
+                architecture: "Frontend SPA: Blazor WebAssembly (C# Razor Components) -> Backend: ASP.NET Core Web API -> Database: MS SQL Server (Views & T-SQL).",
                 features: [
-                    "Oylik va yillik moliyaviy ko'rsatkichlarning interaktiv diagrammalari",
-                    "Kategoriyalar bo'yicha xarajatlarni tahlil qilish va byudjet rejalashtirish",
-                    "SQL Server Views orqali katta hajmdagi ma'lumotlarni tezkor yuklash",
-                    "Mobil qurilmalardan qulay boshqarish imkoniyati"
+                    "JavaScript yuklamasisiz to'liq C# va Blazor komponentlari asosida tezkor ishlash",
+                    "Oylik va yillik moliyaviy ko'rsatkichlarning interaktiv grafik tahlillari",
+                    "SQL Server Views orqali katta hajmdagi tranzaksiyalarni soniyalar ichida filtrlash",
+                    "React.js va Blazor tizimlari o'rtasida yagona REST API integratsiyasi"
                 ],
-                tags: ["React.js", ".NET Web API", "JavaScript", "SQL Server", "REST API"]
+                tags: ["Blazor", ".NET Web API", "C#", "SQL Server", "React.js"]
             }
         ];
 
@@ -882,19 +890,19 @@
         cvModal.addEventListener('click', e => { if (e.target === cvModal) closeCvModal(); });
 
         function downloadCvFile() {
-            const cvContent = `FULLSTACK SOFTWARE ENGINEER (.NET & REACT.JS)
+            const cvContent = `FULLSTACK SOFTWARE ENGINEER (.NET, BLAZOR & REACT.JS)
 ==================================================
 TEXNOLOGIYALAR:
-- Frontend: HTML5, CSS3, JavaScript (ES6+), React.js
+- Frontend & Dizayn: HTML5, CSS3, JavaScript (ES6+), React.js, Blazor (WASM/Server), Figma (UI/UX)
 - Backend: .NET, C#, ASP.NET Core Web API, ASP.NET Core MVC
+- Tizimli dasturlash & Desktop: C++ (STL, Algorithms), Windows Forms Application (WinForms)
 - Ma'lumotlar bazasi: SQL (MS SQL Server, T-SQL, Stored Procedures)
-- Desktop: Windows Forms Application (WinForms)
 
 ASOSIY LOYIHALAR:
-1. Enterprise ERP va Ombor Boshqaruvi (ASP.NET Core Web API + React.js + SQL)
-2. Savdo va Kassa POS Tizimi (Windows Forms + C# + SQL Server)
-3. Korporativ Mijozlar Portali va CRM (ASP.NET Core MVC + JS/CSS + SQL)
-4. Moliyaviy Analitika Dashboardi (React.js + .NET Web API + SQL)
+1. Enterprise ERP va Ombor Boshqaruvi (ASP.NET Core Web API + React.js + Figma + SQL)
+2. Savdo, Kassa POS va Qurilmalar Integratsiyasi (Windows Forms + C++ + C# + SQL Server)
+3. Korporativ Mijozlar Portali va CRM (ASP.NET Core MVC + Figma + JS/CSS + SQL)
+4. Real-Vaqt Moliyaviy Analitika va Monitoring (Blazor + .NET Web API + SQL)
 
 ALOQA:
 - Telegram: @fullstack_dotnet_dev
